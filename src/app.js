@@ -21,13 +21,11 @@ app.post('/sign-up', (req, res) => {
         return;
     }
     const isNewUsername = verifyAccountName(username);
-    console.log(isNewUsername);
 
     if (!isNewUsername) return res.status(400).send("Nome de usuário já em uso");
 
     users.push({username, avatar});
 
-    console.log(users);
     res.status(201).send("OK");
 });
 
